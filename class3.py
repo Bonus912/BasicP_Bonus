@@ -65,19 +65,55 @@
 #     i = i + 1
 
 
+# while True:
+#     choice = int(input("กรอก 1 เพื่อบวกเลข, กรอก 2 เพื่อออก"))
+
+#     if choice == 1:
+#         num = int(input("จำนวนเลขที่ต้องการจะบวก:"))
+#         sumation = 0
+
+#         for i in range(num):
+#             num1 = int(input("กรอกเลข:"))
+#             sumation = sumation + num1
+        
+#         print("ผลลัพท์", sumation)
+
+#     if choice == 2:
+#         print("บาย บาย")
+#         break
+
+monster = 50
+sword = 20
+knife = 10
+wood = 5
+
 while True:
-    choice = int(input("กรอก 1 เพื่อบวกเลข, กรอก 2 เพื่อออก"))
+    choice = int(input("กรอก 1 เพื่อต่อสู้กับมอนเตอร์, กรอก 2 เพื่อออก "))
+
 
     if choice == 1:
-        num = int(input("จำนวนเลขที่ต้องการจะบวก:"))
-        sumation = 0
+        print("เลือดมอนเตอร์; 50")
+        print("อาวุธ 1.ดาบ(20) 2.มีด(10) 3.ไม้(5)")
+        num = int(input("จำนวนครั้งที่จะตีมอนเตอร์ "))
 
         for i in range(num):
-            num1 = int(input("กรอกเลข:"))
-            sumation = sumation + num1
-        
-        print("ผลลัพท์", sumation)
+            num1 = int(input("เลือกอาวุธ 1.ดาบ(20) 2.มีด(10) 3.ไม้(5) "))
+            if num1 == 1:
+                monster = monster - sword
+            if num1 == 2:
+                monster = monster - knife
+            if num1 == 3:
+                monster = monster - wood
+            if monster < 0:
+                monster = 20
+                print("มอนเตอร์ยังไม่ตาย")
+            print("เลือดมอนเตอร์เหลือ " , monster)
+            if monster == 0:
+                print("คุณชนะ")
+                break
+        break
 
-    if choice == 2:
-        print("บาย บาย")
+
+    elif choice == 2:
+        print("บาย")        
         break
